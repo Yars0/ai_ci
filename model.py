@@ -50,8 +50,9 @@ dbscan = DBSCAN(eps=12, min_samples=200)  # eps и min_samples можно рег
 df['cluster'] = dbscan.fit_predict(X)
 df['label'] = df['cluster'].apply(lambda x: 1 if x == -1 else 0)
 
-features = ['device_id', 'ip_encoded', 'pin_inc_count', 'tran_code']  # Значимые для анализа параметры
-X = df[features].fillna(0)  # Замена пропуски на 0
+# 1. признаки для модели
+features = ['device_id', 'ip_encoded', 'pin_inc_count', 'tran_code']  # Включите значимые для анализа параметры
+X = df[features].fillna(0)  # Заменяем пропуски на 0
 y = df['label']  # Целевой признак
 
 # 2. Обучающая и тестовая выборки
@@ -63,10 +64,10 @@ model = RandomForestClassifier(random_state=42, n_estimators=100, max_depth=10)
 # 4. Обучение модели
 model.fit(X_train, y_train)
 
-# 5. Прогнозы
+# 5. прогнозы
 y_pred = model.predict(X_test)
 
-# 6. Качество модели
+# 6. качество модели
 print("Classification Report:")
 print(classification_report(y_test, y_pred, target_names=["Normal", "Anomaly"]))
 

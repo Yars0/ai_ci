@@ -16,9 +16,9 @@ df['device_id_encoded'] = encoder_device.fit_transform(df['device_id'])
 # Выбор данных для DBSCAN (2D: device_id_encoded и ip_encoded)
 X = df[['device_id_encoded', 'ip_encoded']].values
 
-# 1. ЗАново определяем признаки для модели
-features = ['device_id', 'ip_encoded', 'pin_inc_count', 'tran_code']  # Включите значимые для анализа параметры
-X = df[features].fillna(0)  # Заменяем пропуски на 0
+# 1. Определите признаки для модели
+features = ['device_id', 'ip_encoded', 'pin_inc_count', 'tran_code']  
+X = df[features].fillna(0)  
 
 # Масштабирование данных
 #scaler = StandardScaler()
@@ -33,7 +33,8 @@ model = load('model.pkl')
 predictions = model.predict(X)
 
 # Преобразование предсказаний в True/False
-predictions = predictions > 0.5  # Для классификатора, если это вероятности
+predictions = predictions > 0.5  
+
 # Создание DataFrame с предсказаниями
 predictions_df = pd.DataFrame(predictions, columns=["Prediction"])
 
