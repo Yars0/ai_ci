@@ -1,0 +1,61 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Process" id="Rz12Ky6gTf-XfP_IZ2n_">
+    <mxGraphModel dx="880" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-1" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="50" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-2" value="Загрузка данных (dataset.csv)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="130" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-3" style="" edge="1" parent="1" source="F1ZQzR7cKQfISgIezX9M-1" target="F1ZQzR7cKQfISgIezX9M-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-4" value="Кодирование IP и device_id" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="210" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-5" style="" edge="1" parent="1" source="F1ZQzR7cKQfISgIezX9M-2" target="F1ZQzR7cKQfISgIezX9M-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-6" value="Выбор признаков (device_id, ip, pin_inc_count, tran_code)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-7" style="" edge="1" parent="1" source="F1ZQzR7cKQfISgIezX9M-4" target="F1ZQzR7cKQfISgIezX9M-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-8" value="Масштабирование данных (StandardScaler)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="370" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-9" style="" edge="1" parent="1" source="F1ZQzR7cKQfISgIezX9M-6" target="F1ZQzR7cKQfISgIezX9M-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-10" value="Загрузка модели (model.pkl)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="450" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-11" style="" edge="1" parent="1" source="F1ZQzR7cKQfISgIezX9M-8" target="F1ZQzR7cKQfISgIezX9M-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-12" value="Получение предсказаний (predict)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="530" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-13" style="" edge="1" parent="1" source="F1ZQzR7cKQfISgIezX9M-10" target="F1ZQzR7cKQfISgIezX9M-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-14" value="Сохранение результатов (predict.csv)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="610" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-15" style="" edge="1" parent="1" source="F1ZQzR7cKQfISgIezX9M-12" target="F1ZQzR7cKQfISgIezX9M-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-16" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="F1ZQzR7cKQfISgIezX9M-17" style="" edge="1" parent="1" source="F1ZQzR7cKQfISgIezX9M-14" target="F1ZQzR7cKQfISgIezX9M-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
